@@ -2,15 +2,31 @@
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
-#include "PolyMath.h"
+#include <stack>
+#include <string>
+#include <sstream>
+#include "PolynomialOperatorOverloads.h"
+#include "ParseInfixToPostfix.h"
 
 using namespace std;
 
 class Polynomial
 {
 public:
+	// empty polynomial
 	Polynomial() {}
-	Polynomial operator+(Polynomial B);
-	Polynomial operator-(Polynomial B);
 };
+
+Polynomial operator + (const Polynomial& P, const Polynomial& Q)
+{
+	// etc. 
+	// for now: 
+	return P;
+}
+
+Polynomial operator - (const Polynomial& P, const Polynomial& Q)
+{
+	// for now: 
+	return P;
+}
 

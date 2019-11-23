@@ -23,7 +23,10 @@
     <ClInclude Include="PolyCAS_Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PolyMath.h">
+    <ClInclude Include="PolynomialOperatorOverloads.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParseInfixToPostfix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

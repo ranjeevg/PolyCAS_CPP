@@ -154,8 +154,9 @@
     <ClCompile Include="PolyCAS.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ParseInfixToPostfix.h" />
     <ClInclude Include="PolyCAS_Core.h" />
-    <ClInclude Include="PolyMath.h" />
+    <ClInclude Include="PolynomialOperatorOverloads.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
