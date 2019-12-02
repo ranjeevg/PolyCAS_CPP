@@ -16,17 +16,3 @@ public:
 	// empty polynomial
 	Polynomial() {}
 };
-
-Polynomial operator + (const Polynomial& P, const Polynomial& Q)
-{
-	// etc. 
-	// for now: 
-	return P;
-}
-
-Polynomial operator - (const Polynomial& P, const Polynomial& Q)
-{
-	// for now: 
-	return P;
-}
-

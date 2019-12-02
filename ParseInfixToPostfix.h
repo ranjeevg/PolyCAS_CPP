@@ -1,80 +1,93 @@
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#include <stack>
-#include <string>
-#include <sstream>
-// this is where the structure of the Polynomial class is defined
-#include "PolyCAS_Core.h"
-//Function to return precedence of operators 
-int prec(char c)
-{
-	if (c == '^')
-		return 3;
-	else if (c == '*' || c == '/')
-		return 2;
-	else if (c == '+' || c == '-')
-		return 1;
-	else
-		return -1;
+#include<iostream>
+#include<cstring>
+#include<stack>
+using namespace std;
+
+// get weight of operators as per precedence
+// higher weight given to operators with higher precedence
+// for non operators, return 0
+
+int getWeight(char ch) {
+	switch (ch) {
+	case '!': return 4;
+	case '^': return 3;
+	case '/':
+	case '*': return 2;
+	case '+':
+	case '-': return 1;
+	default: return 0;
+	}
 }
 
-// The main function to convert infix expression 
-//to postfix expression 
-void infixToPostfix(string s)
-{
-	std::stack<char> st;
-	st.push('N');
-	int l = s.length();
-	string ns;
-	for (int i = 0; i < l; i++)
-	{
-		// If the scanned character is an operand, add it to output string. 
-		if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
-			ns += s[i];
-
-		// If the scanned character is an ‘(‘, push it to the stack. 
-		else if (s[i] == '(')
-
-			st.push('(');
-
-		// If the scanned character is an ‘)’, pop and to output string from the stack 
-		// until an ‘(‘ is encountered. 
-		else if (s[i] == ')')
-		{
-			while (st.top() != 'N' && st.top() != '(')
-			{
-				char c = st.top();
-				st.pop();
-				ns += c;
-			}
-			if (st.top() == '(')
-			{
-				char c = st.top();
-				st.pop();
-			}
+// convert infix expression to postfix using a stack
+void infix2postfix(char infix[], char postfix[], int size) {
+	stack<char> s;
+	int weight;
+	int i = 0;
+	int k = 0;
+	char ch;
+	// iterate over the infix expression
+	while (i < size) {
+		ch = infix[i];
+		if (ch == '(') {
+			// simply push the opening parenthesis
+			s.push(ch);
+			i++;
+			continue;
 		}
+		if (ch == ')') {
+			// if we see a closing parenthesis,
+			// pop of all the elements and append it to
+			// the postfix expression till we encounter
+			// a opening parenthesis
+			while (!s.empty() && s.top() != '(') {
+				postfix[k++] = s.top();
+				s.pop();
 
-		//If an operator is scanned 
+			}
+			// pop off the opening parenthesis also
+			if (!s.empty()) {
+				s.pop();
+			}
+			i++;
+			continue;
+		}
+		weight = getWeight(ch);
+		if (weight == 0) {
+			// we saw an operand
+			// simply append it to postfix expression
+			postfix[k++] = ch;
+
+		}
 		else {
-			while (st.top() != 'N' && prec(s[i]) <= prec(st.top()))
-			{
-				char c = st.top();
-				st.pop();
-				ns += c;
+			// we saw an operator
+			if (s.empty()) {
+				// simply push the operator onto stack if
+				// stack is empty
+				s.push(ch);
 			}
-			st.push(s[i]);
+			else {
+				// pop of all the operators from the stack and
+				// append it to the postfix expression till we
+				// see an operator with a lower precedence that
+				// the current operator
+				while (!s.empty() && s.top() != '(' &&
+					weight <= getWeight(s.top())) {
+					postfix[k++] = s.top();
+					s.pop();
+
+				}
+				// push the current operator onto stack
+				s.push(ch);
+			}
 		}
-
+		i++;
 	}
-	//Pop all the remaining elements from the stack 
-	while (st.top() != 'N')
-	{
-		char c = st.top();
-		st.pop();
-		ns += c;
+	// pop of the remaining operators present in the stack
+	// and append it to postfix expression
+	while (!s.empty()) {
+		postfix[k++] = s.top();
+		s.pop();
 	}
-
-	cout << ns << endl;
-
+	postfix[k] = 0; // null terminate the postfix expression
 }

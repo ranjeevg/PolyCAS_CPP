@@ -154,6 +154,7 @@
     <ClCompile Include="PolyCAS.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EvaluatePostfixExpression.h" />
     <ClInclude Include="ParseInfixToPostfix.h" />
     <ClInclude Include="PolyCAS_Core.h" />
     <ClInclude Include="PolynomialOperatorOverloads.h" />
