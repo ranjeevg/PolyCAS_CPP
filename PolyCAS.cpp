@@ -4,16 +4,26 @@
 #include <stack>
 #include <string>
 #include <sstream>
-// this is where the structure of the Polynomial class is defined
+// custom headers
 #include "PolyCAS_Core.h"
-// this is where the operator overloads are defined
 #include "PolynomialOperatorOverloads.h"
-// contains the code to parse from infix to postfix
 #include "ParseInfixToPostfix.h"
+#include "EvaluatePostfixExpression.h"
 
 using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Hello World!\n"
+			  << "Please enter an expression here: ";
+	string s = " ";
+	cin  >> s;
+	cout << endl << endl;
+	int size = s.length;
+	char PostfixExpression[100];
+	// converting the entered expression to postfix using
+	// the method we defined in ParseInfixToPostfix.h
+	infix2postfix(s, PostfixExpression, size)
+
+
 }

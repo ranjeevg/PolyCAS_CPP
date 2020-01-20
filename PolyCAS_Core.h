@@ -5,8 +5,6 @@
 #include <stack>
 #include <string>
 #include <sstream>
-#include "PolynomialOperatorOverloads.h"
-#include "ParseInfixToPostfix.h"
 
 using namespace std;
 

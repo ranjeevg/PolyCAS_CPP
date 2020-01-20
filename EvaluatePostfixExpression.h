@@ -1,6 +1,7 @@
 #include<iostream>
 #include<cctype>
 #include<stack>
+#include <cstdlib>
 
 using namespace std;
 
@@ -12,15 +13,6 @@ int eval(int op1, int op2, char operate) {
 	case '/': return op2 / op1;
 	case '+': return op2 + op1;
 	case '-': return op2 - op1;
-	default: return 0;
-	}
-}
-int getWeight(char ch) {
-	switch (ch) {
-	case '/':
-	case '*': return 2;
-	case '+':
-	case '-': return 1;
 	default: return 0;
 	}
 }

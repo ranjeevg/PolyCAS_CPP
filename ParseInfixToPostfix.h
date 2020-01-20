@@ -1,6 +1,8 @@
 #include<iostream>
 #include<cstring>
 #include<stack>
+#include "PolyCAS_Core.h"
+
 using namespace std;
 
 // get weight of operators as per precedence
@@ -20,7 +22,7 @@ int getWeight(char ch) {
 }
 
 // convert infix expression to postfix using a stack
-void infix2postfix(char infix[], char postfix[], int size) {
+void infix2postfix(string infix, char postfix[], int size) {
 	stack<char> s;
 	int weight;
 	int i = 0;
