@@ -24,4 +24,5 @@ int main()
 	// converting the entered expression to postfix using
 	// the method we defined in ParseInfixToPostfix.h
 	infix2postfix(s, PostfixExpression, size);
+	cout << PostfixExpression;
 }
