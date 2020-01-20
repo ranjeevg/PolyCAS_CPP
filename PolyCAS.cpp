@@ -19,11 +19,9 @@ int main()
 	string s = " ";
 	cin  >> s;
 	cout << endl << endl;
-	int size = s.length;
+	int size = s.length();
 	char PostfixExpression[100];
 	// converting the entered expression to postfix using
 	// the method we defined in ParseInfixToPostfix.h
-	infix2postfix(s, PostfixExpression, size)
-
-
+	infix2postfix(s, PostfixExpression, size);
 }
