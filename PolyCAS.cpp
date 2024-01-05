@@ -6,7 +6,7 @@
 #include <sstream>
 // custom headers
 #include "PolyCAS_Core.h"
-#include "PolynomialOperatorOverloads.h"
+#include "TermOperatorOverloads.h"
 #include "ParseInfixToPostfix.h"
 #include "EvaluatePostfixExpression.h"
 

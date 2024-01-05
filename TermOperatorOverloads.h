@@ -7,21 +7,26 @@
 
 using namespace std;
 
-Polynomial operator + (const Polynomial& P, const Polynomial& Q)
+Term operator + (const Term& P, const Term& Q)
 {
 	// etc. 
 	// for now: 
 	return P;
 }
 
-Polynomial operator - (const Polynomial& P, const Polynomial& Q)
+Term operator - (const Term& P, const Term& Q)
 {
 	// for now: 
 	return P;
 }
 
-Polynomial operator * (const Polynomial& P, const Polynomial& Q)
+Term operator * (const Term& P, const Term& Q)
 {
 	// for now: 
 	return P;
+}
+
+Term operator / (const Term& P, const Term& Q)
+{
+
 }

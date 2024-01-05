@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -28,7 +27,15 @@ public:
 	Polynomial Simplify() 
 	{
 		Polynomial simplified = Polynomial();
+
+		// go through the vector 
 		return simplified;
+	}
+
+	// destructor, defined explicitly for when needed later
+	~Polynomial() 
+	{
+
 	}
 
 protected:
@@ -44,6 +51,7 @@ private:
 	Polynomial Divide(Polynomial p);
 };
 
+// Representing a single term in the expression.
 class Term {
 public: 
 	// the coefficient of the term
