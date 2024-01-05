@@ -39,21 +39,50 @@ public:
 	}
 
 protected:
-	// a vector (AKA list, in C# terminology) of terms
+	// a C++ vector of Terms in the expression's numerator
 	vector<Term> Expression;
 
 // for operations and the like
-// TODO: calculus operators
+// TODO: define bodies for both
 private: 
-	Polynomial Add(Polynomial p);
-	Polynomial Subtract(Polynomial p);
-	Polynomial Multiply(Polynomial p);
-	Polynomial Divide(Polynomial p);
+	Polynomial Add(const Polynomial& p)
+	{
+
+	}
+
+	Polynomial Subtract(const Polynomial& p)
+	{
+
+
+	}
+	
+	Polynomial Multiply(const Polynomial& p)
+	{
+
+	}
+
+	// TODO for later, when you extend this to rational functions.
+	Polynomial Divide(const Polynomial&)
+	{
+		throw logic_error("Not implemeted yet");
+	}
 };
 
 // Representing a single term in the expression.
 class Term {
 public: 
+	
+	// constructor with power and coefficients provided
+	Term(double coeff, int pow)
+	{
+		this->Power = pow;
+		this->TermCoefficient = coeff;
+	}
+
+	// default constructor
+	Term() {};
+	
+	// PROPERTIES
 	// the coefficient of the term
 	double TermCoefficient;
 	// term degree
