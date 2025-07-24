@@ -1,6 +1,6 @@
-#include<iostream>
-#include<cctype>
-#include<stack>
+#include <iostream>
+#include <cctype>
+#include <stack>
 #include <cstdlib>
 
 using namespace std;
