@@ -1,6 +1,6 @@
-#include<iostream>
-#include<cstring>
-#include<stack>
+#include <iostream>
+#include <cstring>
+#include <stack>
 #include "PolyCAS_Core.h"
 
 using namespace std;
