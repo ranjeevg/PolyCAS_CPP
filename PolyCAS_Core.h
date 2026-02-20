@@ -8,6 +8,27 @@
 
 using namespace std;
 
+// Representing a single term in the expression.
+class Term {
+public: 
+	
+	// constructor with power and coefficients provided
+	Term(double coeff, int pow)
+	{
+		this->Power = pow;
+		this->TermCoefficient = coeff;
+	}
+
+	// default constructor
+	Term() {};
+	
+	// PROPERTIES
+	// the coefficient of the term
+	double TermCoefficient;
+	// term degree
+	int Power;
+};
+
 class Polynomial
 {
 public:
@@ -66,25 +87,4 @@ private:
 	{
 		throw logic_error("Not implemeted yet");
 	}
-};
-
-// Representing a single term in the expression.
-class Term {
-public: 
-	
-	// constructor with power and coefficients provided
-	Term(double coeff, int pow)
-	{
-		this->Power = pow;
-		this->TermCoefficient = coeff;
-	}
-
-	// default constructor
-	Term() {};
-	
-	// PROPERTIES
-	// the coefficient of the term
-	double TermCoefficient;
-	// term degree
-	int Power;
 };
