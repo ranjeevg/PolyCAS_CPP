@@ -44,7 +44,6 @@ public:
 		Expression = expr;
 	}
 
-	// apparently C++ doesn't have extension functions, so declaring a function within the class itself to simplify like terms
 	Polynomial Simplify() 
 	{
 		Polynomial simplified = Polynomial();
